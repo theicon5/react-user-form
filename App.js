@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+//create a obeject and a submit button it should be editable use post method
 function App() {
   const [users, setUsers] = useState([
     { name: "Anmol", qualification: "btech", city: "UP" },
@@ -14,7 +14,7 @@ function App() {
 
   const [editIndex, setEditIndex] = useState(null);
 
-  // 🔹 Fake POST API
+  // Fake POST API
   const postUser = (newUser) => {
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -45,8 +45,8 @@ function App() {
   // Submit (POST call)
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const updatedUsers = await postUser(form); // 🔹 POST request simulation
+   // POST request 
+    const updatedUsers = await postUser(form); 
     setUsers(updatedUsers);
 
     setForm({ name: "", qualification: "", city: "" });
